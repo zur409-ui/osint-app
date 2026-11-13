@@ -22,6 +22,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Create .env file
+        run: echo "VITE_DADATA_TOKEN=${{ secrets.VITE_DADATA_TOKEN }}" > .env
+
       - name: Build
         run: npm run build
 
